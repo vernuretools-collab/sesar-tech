@@ -27,7 +27,7 @@ export default function Contact() {
       <PageHeader
         eyebrow="Contact"
         title={site.stayConnected}
-        lead="Call or email Sesar Technologies about laptop, PC, and Apple device sales, service, or rental. The form opens your email app with the message ready to send."
+        lead="Call or email Sesar Technologies about IT hardware sales, doorstep service, or rental. The form opens your email app with the message ready to send."
       />
       <div className="contact-layout">
         <section className="info-card contact-aside">

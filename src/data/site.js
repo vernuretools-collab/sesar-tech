@@ -24,7 +24,7 @@ export const site = {
       image: "/images/laptop-notes.jpg",
       imageAlt: "Person working on a laptop and taking notes",
       summary:
-        "Laptops, desktop PCs, and Apple devices chosen for the way your team actually works.",
+        "Custom PC builds and business supply of desktops, laptops, workstations, and servers — new, demo, or refurbished.",
     },
     {
       to: "/service",
@@ -32,7 +32,7 @@ export const site = {
       image: "/images/repair-bench.jpg",
       imageAlt: "Hands soldering a circuit board on a workbench",
       summary:
-        "Repair and support for laptops, PCs, and Apple devices so work can continue.",
+        "Doorstep Apple service, chip-level repair, and peripheral support.",
     },
     {
       to: "/rent",
@@ -40,7 +40,7 @@ export const site = {
       image: "/images/team-laptops.jpg",
       imageAlt: "A meeting room where a team is using laptops",
       summary:
-        "Short- and long-term rental of laptops, PCs, and Apple devices when buying is not the right step.",
+        "Short- and long-term rental of desktops, laptops, workstations, and servers.",
     },
   ],
   industries: [
@@ -132,42 +132,162 @@ export const site = {
       text: "We arrange the purchase, the service visit, or the rental delivery.",
     },
   ],
+  salesOffers: [
+    {
+      title: "Custom PC building",
+      text: "We build a desktop around the work: processor, memory, storage, and graphics chosen for that desk, then assembled and tested before it is supplied.",
+    },
+    {
+      title: "Business service",
+      text: "Supply for offices and teams: the right quantity of desktops, laptops, workstations, or servers, matched to how the business actually works.",
+    },
+  ],
+  salesConditions: [
+    {
+      title: "New",
+      text: "Unused machines, supplied for teams that want current hardware with a full working life ahead.",
+    },
+    {
+      title: "Demo",
+      text: "Demonstration units that have been shown or lightly used, at a lower cost than a brand-new machine.",
+    },
+    {
+      title: "Refurbished",
+      text: "Checked and restored hardware for teams that need reliable machines without paying new prices.",
+    },
+  ],
+  salesHardware: [
+    {
+      title: "Desktop",
+      text: "Fixed computers for offices, labs, and shared desks. Available as a ready system or a custom build.",
+    },
+    {
+      title: "Laptop",
+      text: "Portable machines for people who move between desks, sites, and meetings.",
+    },
+    {
+      title: "Workstation",
+      text: "Higher-spec machines for design, engineering, and other desks that need more than an everyday PC.",
+    },
+    {
+      title: "Servers",
+      text: "Server hardware for businesses that keep files, applications, or services on their own equipment.",
+    },
+  ],
   howSales: [
     {
       title: "Enquire",
-      text: "Tell us how many people need machines and what they use them for.",
+      text: "Tell us the machine type, whether you want new, demo, or refurbished, and if you need a custom build.",
     },
     {
       title: "Recommend",
-      text: "We suggest a practical laptop, PC, or Apple setup for that work.",
+      text: "We suggest a desktop, laptop, workstation, or server that fits the work and the budget.",
     },
     {
       title: "Supply",
       text: "You confirm the choice, and we arrange the supply.",
     },
   ],
+  appleProducts: [
+    {
+      title: "MacBook",
+      text: "Doorstep service for MacBook models that will not start, lose power, overheat, or stop doing the work they were bought for.",
+    },
+    {
+      title: "iMac",
+      text: "On-site support for iMac desktops used in offices and shared desks, with the fault explained before any repair.",
+    },
+    {
+      title: "Mac mini",
+      text: "Doorstep checks and repair for Mac mini units that sit behind a monitor and quietly run a desk or a small office.",
+    },
+    {
+      title: "Mac Studio",
+      text: "Hardware service at your site for Mac Studio machines used for heavier day-to-day work.",
+    },
+  ],
+  chipLevel: [
+    {
+      title: "Desktop",
+      text: "Board-level repair for desktop PCs: no power, no display, short circuits, and failed components on the motherboard.",
+    },
+    {
+      title: "Laptop",
+      text: "Chip-level work on laptop boards when a machine will not charge, boot, or show a picture, and a simple part swap will not fix it.",
+    },
+    {
+      title: "Workstation",
+      text: "Chip-level service for workstations that teams depend on, so a board fault does not keep a specialist desk idle.",
+    },
+  ],
+  generalService: [
+    {
+      title: "Monitors",
+      text: "Doorstep help when a screen stays black, flickers, or will not connect to the computer on the desk.",
+    },
+    {
+      title: "Printers and scanners",
+      text: "On-site support for printers and scanners that jam, fail to print, or drop off the office network.",
+    },
+    {
+      title: "Keyboards, mice, and docks",
+      text: "Replacement and fault-finding for keyboards, mice, and docking stations that stop a person from working.",
+    },
+    {
+      title: "UPS and power",
+      text: "Doorstep checks for UPS units and power leads that cut out, beep, or fail to keep a machine running.",
+    },
+  ],
   howService: [
     {
       title: "Enquire",
-      text: "Share the device type, what it is doing, and how soon it is needed.",
+      text: "Tell us whether it is an Apple product, a chip-level desktop, laptop, or workstation fault, or a peripheral.",
     },
     {
-      title: "Diagnose",
-      text: "We identify the fault before recommending parts or repair work.",
+      title: "Doorstep visit",
+      text: "We come to your site, identify the fault, and explain the repair before any work goes ahead.",
     },
     {
       title: "Repair",
       text: "We carry out the agreed repair so the person can get back to work.",
     },
   ],
+  rentalTerms: [
+    {
+      title: "Short-term rental",
+      text: "Extra desktops, laptops, workstations, or servers for a project, an event, training, or a temporary team.",
+    },
+    {
+      title: "Long-term rental",
+      text: "A working set of IT hardware for a longer engagement, without purchasing the whole fleet up front.",
+    },
+  ],
+  rentalProducts: [
+    {
+      title: "Desktop",
+      text: "Office and shared-desk desktops for as long as the team needs them, then returned when the rental ends.",
+    },
+    {
+      title: "Laptop",
+      text: "Portable machines for people moving between desks, sites, and meetings.",
+    },
+    {
+      title: "Workstation",
+      text: "Higher-spec machines for design, engineering, and other desks that need more than an everyday PC.",
+    },
+    {
+      title: "Servers",
+      text: "Server hardware for a fixed rental window when buying the equipment is not the right step.",
+    },
+  ],
   howRent: [
     {
       title: "Enquire",
-      text: "Tell us the quantity, the device type, and how long you need the machines.",
+      text: "Tell us the product — desktop, laptop, workstation, or server — the quantity, and how long you need it.",
     },
     {
       title: "Recommend",
-      text: "We match laptops, PCs, or Apple devices to the length of the rental.",
+      text: "We match the IT hardware to the length of the rental.",
     },
     {
       title: "Deliver",
