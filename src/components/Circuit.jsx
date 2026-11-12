@@ -9,8 +9,8 @@ export default function Circuit({ variant = "hero" }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#3199D5" />
-          <stop offset="100%" stopColor="#58CDB5" />
+          <stop offset="0%" stopColor="#111111" />
+          <stop offset="100%" stopColor="#71717a" />
         </linearGradient>
       </defs>
       <g
@@ -30,7 +30,7 @@ export default function Circuit({ variant = "hero" }) {
           d="M150 360 H280 V250 H420 V340 H600"
         />
       </g>
-      <g className="circuit-nodes" fill="#58CDB5">
+      <g className="circuit-nodes" fill="#111111">
         <circle cx="170" cy="70" r="4.5" />
         <circle cx="310" cy="150" r="4.5" />
         <circle cx="470" cy="70" r="4.5" />

@@ -1,9 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Circuit from "../components/Circuit";
-import ContactBand from "../components/ContactBand";
-import HowItWorks from "../components/HowItWorks";
-import IndustryMarquee from "../components/IndustryMarquee";
 import Reveal from "../components/Reveal";
 import { site } from "../data/site";
 
@@ -12,98 +8,166 @@ export default function Home() {
     document.title = "Sesar Technologies | Building Stronger IT Foundations";
   }, []);
 
+  const featured = site.rentals.slice(0, 4);
+
   return (
     <>
-      <section className="hero">
-        <Circuit />
-        <div className="hero-copy">
-          <p className="eyebrow">{site.name}</p>
-          <h1>{site.headline}</h1>
-          <p className="lead">{site.intro}</p>
+      <section className="home-hero">
+        <div className="home-hero-copy">
+          <p className="eyebrow hero-kicker">{site.name}</p>
+          <h1>
+            {site.headline.split(" ").map((word, index) => (
+              <span
+                key={`${word}-${index}`}
+                style={{ animationDelay: `${0.12 + index * 0.06}s` }}
+              >
+                {word}
+              </span>
+            ))}
+          </h1>
+          <p className="lead hero-lead">{site.intro}</p>
           <div className="hero-actions">
             <Link className="button" to="/contact">
-              Contact us
+              Get Started
             </Link>
             <a className="button button-quiet" href={`tel:${site.phoneTel}`}>
               Call us
             </a>
           </div>
         </div>
-        <div className="hero-visual">
+        <div className="home-hero-visual">
           <img
-            className="float-photo"
-            src="/images/laptop-desk.jpg"
-            alt="Person typing on a silver laptop at a desk"
+            className="home-hero-photo"
+            src="/images/team-table.jpg"
+            alt="A team working together with laptops open on the table"
           />
-          <div className="offer-stack">
-            {site.offerings.map((item) => (
-              <Link key={item.to} className="offer-card" to={item.to}>
-                <img src={item.image} alt="" />
-                <div>
-                  <h2>{item.title}</h2>
-                  <p>{item.summary}</p>
-                  <span>View {item.title}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
-      <HowItWorks
-        intro="From the first call to machines on desks, the path is the same."
-        steps={site.howHome}
-      />
-
       <Reveal>
-        <section className="section">
-          <div className="section-heading">
-            <h2>Laptops, PCs, and Apple devices</h2>
-            <p>
-              Hardware for everyday work, specialist desks, and teams that
-              already use Apple.
-            </p>
-          </div>
-          <div className="photo-band">
-            {site.devices.map((device) => (
-              <article key={device.title} className="photo-tile">
-                <img src={device.image} alt={device.imageAlt} />
-                <h3>{device.title}</h3>
-                <p>{device.sales}</p>
+        <section className="home-panel" id="rentals">
+          <header className="home-panel-head">
+            <div>
+              <p className="eyebrow">Rentals</p>
+              <h2>A few devices to start an enquiry</h2>
+              <p>Sample monthly rates. The full list lives on the rent page.</p>
+            </div>
+            <Link to="/rent">All rentals</Link>
+          </header>
+          <div className="home-rent-row">
+            {featured.map((item) => (
+              <article key={item.name}>
+                <img src={item.image} alt={item.imageAlt} />
+                <h3>{item.name}</h3>
+                <p>{item.summary}</p>
+                <p className="home-spec">{item.spec}</p>
+                <div>
+                  <strong>{item.price}</strong>
+                  <Link to="/contact">Rent now</Link>
+                </div>
               </article>
             ))}
           </div>
         </section>
       </Reveal>
 
-      <IndustryMarquee />
+      <Reveal>
+        <section className="home-process">
+          <div className="home-process-intro">
+            <p className="eyebrow">How it works</p>
+            <h2>From the first call to machines on desks</h2>
+            <p>The path is the same.</p>
+          </div>
+          <ol>
+            {site.howHome.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </Reveal>
 
       <Reveal>
-        <section className="section">
-          <div className="section-heading">
-            <h2>Serving</h2>
-            <p>
-              The same hardware support for the organisations already named on
-              our site.
-            </p>
-          </div>
-          <div className="card-grid">
-            {site.industries.map((industry) => (
-              <Link
-                key={industry.id}
-                className="info-card industry-card"
-                to={`/industries#${industry.id}`}
-              >
-                <img src={industry.image} alt="" />
-                <h3>{industry.title}</h3>
-                <p>{industry.summary}</p>
-              </Link>
-            ))}
+        <section className="home-services" aria-label="What we do">
+          {site.offerings.map((item) => (
+            <Link key={item.to} className="home-service" to={item.to}>
+              <img src={item.image} alt={item.imageAlt} />
+              <div>
+                <h2>{item.title}</h2>
+                <p>{item.summary}</p>
+                <span>Open {item.title}</span>
+              </div>
+            </Link>
+          ))}
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="home-split">
+          <img
+            src="/images/desktop-setup.jpg"
+            alt="A desktop setup with a keyboard, mouse, and monitors"
+          />
+          <div>
+            <p className="eyebrow">Hardware</p>
+            <h2>Laptops, PCs, and Apple devices</h2>
+            <ul className="home-list">
+              {site.devices.map((device) => (
+                <li key={device.title}>
+                  <h3>{device.title}</h3>
+                  <p>{device.sales}</p>
+                </li>
+              ))}
+            </ul>
+            <Link className="button" to="/sales">
+              View sales
+            </Link>
           </div>
         </section>
       </Reveal>
 
-      <ContactBand />
+      <Reveal>
+        <section className="home-split home-split-flip">
+          <img
+            src="/images/meeting-room.jpg"
+            alt="An empty conference room with a long table"
+          />
+          <div>
+            <p className="eyebrow">Industries</p>
+            <h2>The organisations we already support</h2>
+            <ul className="home-links">
+              {site.industries.map((industry) => (
+                <li key={industry.id}>
+                  <Link to={`/industries#${industry.id}`}>
+                    <strong>{industry.title}</strong>
+                    <span>{industry.summary}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </Reveal>
+
+      <section className="home-close">
+        <div className="home-close-inner">
+          <div>
+            <p className="eyebrow">Contact</p>
+            <h2>{site.stayConnected}</h2>
+            <p>{site.tagline}</p>
+          </div>
+          <div className="home-close-actions">
+            <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <Link className="button" to="/contact">
+              Send an enquiry
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

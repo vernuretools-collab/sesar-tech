@@ -15,10 +15,11 @@ export default function Layout() {
         Skip to content
       </a>
       <header className="site-header">
-        <div className="accent-bar" />
         <div className="header-inner">
           <NavLink to="/" className="brand" onClick={closeMenu}>
-            <img src="/sesar-logo.png" alt="Sesar Technologies" />
+            <span className="logo-plate">
+              <img src="/sesar-logo.png" alt="Sesar Technologies" />
+            </span>
           </NavLink>
           <button
             type="button"
@@ -52,18 +53,20 @@ export default function Layout() {
       </main>
 
       <footer className="site-footer">
-        <div className="footer-inner">
-          <div>
-            <img
-              className="footer-logo"
-              src="/sesar-logo.png"
-              alt="Sesar Technologies"
-            />
+        <div className="footer-panel">
+          <div className="footer-brand">
+            <span className="logo-plate">
+              <img
+                className="footer-logo"
+                src="/sesar-logo.png"
+                alt="Sesar Technologies"
+              />
+            </span>
             <p className="tagline">{site.tagline}</p>
             <p className="footer-line">{site.footerLine}</p>
           </div>
-          <div>
-            <h2>Explore</h2>
+          <nav className="footer-nav" aria-label="Footer">
+            <p className="footer-kicker">Explore</p>
             <ul className="footer-links">
               {site.nav.map((item) => (
                 <li key={item.to}>
@@ -73,27 +76,23 @@ export default function Layout() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h2>{site.stayConnected}</h2>
-            <p>
-              <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
-            </p>
-            <p>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </p>
+          </nav>
+          <div className="footer-contact">
+            <p className="footer-kicker">Contact</p>
+            <a className="footer-chip" href={`tel:${site.phoneTel}`}>
+              <span>Call</span>
+              {site.phoneDisplay}
+            </a>
+            <a className="footer-chip" href={`mailto:${site.email}`}>
+              <span>Email</span>
+              {site.email}
+            </a>
           </div>
         </div>
-        <p className="copyright">
-          © {new Date().getFullYear()} {site.name}
-        </p>
-        <p className="photo-credits">
-          Photos from Pexels:{" "}
-          {site.photoCredits.map((credit, index) => (
-            <a key={credit.href} href={credit.href} target="_blank" rel="noreferrer">{index > 0 ? `, ${credit.name}` : credit.name}</a>
-          ))}
-          .
-        </p>
+        <div className="footer-bar">
+          <p>© {new Date().getFullYear()} {site.name}</p>
+          <p>Sales, service, and rental</p>
+        </div>
       </footer>
     </div>
   );
